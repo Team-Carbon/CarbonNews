@@ -1,0 +1,84 @@
+main: net.teamcarbon.carbonnews.CarbonNews
+name: ${project.name}
+version: ${project.version}
+author: OffLuffy
+description: Timed broadcasts and greeting message with JSON support
+commands:
+  carbonnews:
+    description: Base command, alias for sub commands and help
+    usage: /cn [help|info|list|reload|toggle]
+    aliases: [cnews, cn]
+  carbonnewshelp:
+    description: Help command for CarbonNews
+    usage: /cnhelp
+    aliases: [carbonnewsh, cnewshelp, cnewsh, cnhelp, cnh]
+    permission: carbonnews.help
+  carbonnewsinfo:
+    description: View info on a given message set
+    usage: /cninfo [set]
+    aliases: [carbonnewsi, cnewsinfo, cnewsi, cninfo, cni]
+    permission: carbonnews.info
+  carbonnewslist:
+    description: List sets or messages in a set
+    usage: /cnlist [sets|messages [set]]
+    aliases: [carbonnewsl, cnewslist, cnewsl, cnlist, cnl]
+    permission: carbonnews.list
+  carbonnewsreload:
+    description: Reloads CarbonNews config
+    usage: /cnreload
+    aliases: [carbonnewsrl, carbonnewsr, cnewsrl, cnewsr, cnrl, cnr]
+    permission: carbonnews.reload
+  carbonnewstoggle:
+    description: Disable, enable, or toggle a message set
+    usage: /cntoggle [set] <on|off>
+    aliases: [carbonnewst, cnewstoggle, cnewst, cntoggle, cnt]
+    permission: carbonnews.toggle
+  permissions:
+    carbonnews.reload:
+      description: Allows reloading CarbonNews
+      default: op
+    carbonkit.carbonnews.info:
+      description: Shows CarbonNews info
+      default: op
+    carbonkit.carbonnews.reload:
+      description: Reloads CarbonNews
+      default: op
+    carbonkit.carbonnews.broadcast:
+      description: Broadcasts a message
+      default: op
+    carbonkit.carbonnews.list.sets:
+      description: Lists news message sets
+      default: op
+    carbonkit.carbonnews.list.messages:
+      description: Lists the messages in this set
+      default: op
+    carbonkit.carbonnews.set.enabled:
+      description: Sets a message set enabled or disabled
+      default: op
+    carbonkit.carbonnews.set.delay:
+      description: Sets the message set's delay
+      default: op
+    carbonkit.carbonnews.set.requireperms:
+      description: Sets whether the message set requires permission to receieve
+      default: op
+    carbonkit.carbonnews.set.prefix:
+      description: Sets the prefix for the message set
+      default: op
+    carbonkit.carbonnews.set.random:
+      description: Sets whether or not the messages from this set are broadcasted in random order
+      default: op
+    carbonkit.carbonnews.addmessage:
+      description: Adds a message to a message set
+      default: op
+    carbonkit.carbonnews.removemessage:
+      description: Removes a message from a message set
+      default: op
+    carbonkit.carbonnews.setmessage:
+      description: Sets a message in a message set
+      default: op
+    carbonkit.carbonnews.addset:
+      description: Creates a new message set
+      default: op
+    carbonkit.carbonnews.removeset:
+      description: Removes a message set
+      default: op
