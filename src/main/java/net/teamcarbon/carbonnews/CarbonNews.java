@@ -47,7 +47,7 @@ public class CarbonNews extends JavaPlugin {
 		BroadcastTask.removeAllTasks();
 		Set<String> keys = getConfig().getConfigurationSection("MessageSets").getKeys(false);
 		for (String key : keys) {
-			BroadcastTask bt = new BroadcastTask(key);
+			BroadcastTask bt = new BroadcastTask(this, key);
 			if (bt.isEnabled()) bt.startBroadcasts();
 		}
 	}

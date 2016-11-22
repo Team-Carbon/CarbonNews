@@ -14,7 +14,6 @@ import java.util.*;
 public class BroadcastTask extends BukkitRunnable {
 	
 	private CarbonNews plugin;
-	public BroadcastTask(CarbonNews p) { plugin = p; }
 
 	private static List<BroadcastTask> tasks = new ArrayList<>();
 
@@ -23,8 +22,9 @@ public class BroadcastTask extends BukkitRunnable {
 	private int position = 0;
 	private boolean enabled, random, perm, consoleClr;
 
-	public BroadcastTask(String set) {
-		this.setName = set;
+	public BroadcastTask(CarbonNews p, String set) {
+		plugin = p;
+		setName = set;
 		loadSet(true);
 		tasks.add(this);
 	}
@@ -64,8 +64,9 @@ public class BroadcastTask extends BukkitRunnable {
 	public void restartBroadcasts() {
 		try {
 			stopBroadcasts();
+			String name = getSetName();
 			removeTask(this);
-			BroadcastTask t = new BroadcastTask(getSetName());
+			BroadcastTask t = new BroadcastTask(plugin, name);
 			t.startBroadcasts();
 			enabled = true;
 			plugin.getLogger().info("Restarted broadcast task for set: " + getSetName());
