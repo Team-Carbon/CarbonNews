@@ -1,5 +1,5 @@
 main: net.teamcarbon.carbonnews.CarbonNews
-name: ${project.name}
+name: ${project.artifactId}
 version: ${project.version}
 author: OffLuffy
 description: Timed broadcasts and greeting message with JSON support
